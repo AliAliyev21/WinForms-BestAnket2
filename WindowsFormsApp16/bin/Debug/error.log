@@ -1,0 +1,8 @@
+2023-10-12 03:44:26 - Error: User added : Ali
+2023-10-12 03:45:54 - Error: Invalid name : The name must be in letters only
+2023-10-12 03:46:07 - Error: Invalid surname : The surname must be in letters only
+2023-10-12 03:46:14 - Error: Invalid email address : Invalid email address
+2023-10-12 03:46:17 - Error: Invalid phone number : The phone number can contain a maximum of 12 digits
+2023-10-12 03:46:26 - Error: Invalid name : The name cannot be empty
+2023-10-12 03:46:29 - Error: Invalid surname : The surname cannot be empty
+2023-10-12 03:46:30 - Error: Invalid email address : Invalid email address

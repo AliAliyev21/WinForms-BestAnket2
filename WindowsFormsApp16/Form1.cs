@@ -201,9 +201,11 @@ namespace WindowsFormsApp16
                 return;
             }
 
+          
+            string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
+
             try
             {
-                string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
                 var json = JsonConvert.SerializeObject(user, Formatting.Indented);
                 File.WriteAllText(jsonFilePath, json);
                 MessageBox.Show("User data saved to JSON file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -215,8 +217,15 @@ namespace WindowsFormsApp16
         }
 
 
+
         private User LoadUserFromJson(string jsonFileName)
         {
+            if (string.IsNullOrWhiteSpace(jsonFileName))
+            {
+                MessageBox.Show("Please select a user from the list to load.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+
             string jsonFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFileName);
 
             if (File.Exists(jsonFilePath))
@@ -224,8 +233,11 @@ namespace WindowsFormsApp16
                 string jsonData = File.ReadAllText(jsonFilePath);
                 return JsonConvert.DeserializeObject<User>(jsonData);
             }
-
-            return null;
+            else
+            {
+                MessageBox.Show("The selected user's JSON file does not exist.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
         }
 
 
@@ -269,8 +281,6 @@ namespace WindowsFormsApp16
             }
         }
 
-
-        private User selectedUserToChange;
 
         private void changeBtn_Click(object sender, EventArgs e)
         {
@@ -347,37 +357,23 @@ namespace WindowsFormsApp16
                 return;
             }
 
-            selectedUserToChange = new User
-            {
-                Name = name,
-                Surname = surname,
-                Email = email,
-                Phone = phone,
-                BirthDate = birthDate
-            };
-        }
+            selectedUser.Name = name;
+            selectedUser.Surname = surname;
+            selectedUser.Email = email;
+            selectedUser.Phone = phone;
+            selectedUser.BirthDate = birthDate;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (selectedUserToChange == null)
-            {
-                MessageBox.Show("No changes to save.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            WriteJson(selectedUserToChange);
 
             ListBox.DataSource = null;
             ListBox.DataSource = users;
             ListBox.DisplayMember = nameof(User.Name);
 
+            WriteJson(selectedUser);
             nameTxtb.Clear();
             surnameTxtb.Clear();
             emailTxtb.Clear();
             phoneMtb.Clear();
             dateTimePicker1.Value = DateTime.Now;
-
-            selectedUserToChange = null;
         }
     }
 }

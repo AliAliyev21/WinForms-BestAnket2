@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBoxAnket = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.emailTxtb = new System.Windows.Forms.TextBox();
             this.surnameTxtb = new System.Windows.Forms.TextBox();
@@ -55,7 +54,6 @@
             // groupBoxAnket
             // 
             this.groupBoxAnket.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBoxAnket.Controls.Add(this.button1);
             this.groupBoxAnket.Controls.Add(this.dateTimePicker1);
             this.groupBoxAnket.Controls.Add(this.emailTxtb);
             this.groupBoxAnket.Controls.Add(this.surnameTxtb);
@@ -77,19 +75,6 @@
             this.groupBoxAnket.TabIndex = 0;
             this.groupBoxAnket.TabStop = false;
             this.groupBoxAnket.Text = "A n k e t";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.PowderBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(242, 442);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 52);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Save Change";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
             // 
@@ -132,9 +117,9 @@
             this.changeBtn.BackColor = System.Drawing.Color.PowderBlue;
             this.changeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.changeBtn.ForeColor = System.Drawing.Color.Black;
-            this.changeBtn.Location = new System.Drawing.Point(242, 383);
+            this.changeBtn.Location = new System.Drawing.Point(310, 426);
             this.changeBtn.Name = "changeBtn";
-            this.changeBtn.Size = new System.Drawing.Size(184, 53);
+            this.changeBtn.Size = new System.Drawing.Size(129, 53);
             this.changeBtn.TabIndex = 1;
             this.changeBtn.Text = "Change";
             this.changeBtn.UseVisualStyleBackColor = false;
@@ -145,9 +130,9 @@
             this.addBtn.BackColor = System.Drawing.Color.PowderBlue;
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addBtn.ForeColor = System.Drawing.Color.Black;
-            this.addBtn.Location = new System.Drawing.Point(13, 383);
+            this.addBtn.Location = new System.Drawing.Point(6, 426);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(183, 53);
+            this.addBtn.Size = new System.Drawing.Size(151, 53);
             this.addBtn.TabIndex = 7;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -158,9 +143,9 @@
             this.clearBtn.BackColor = System.Drawing.Color.PowderBlue;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.clearBtn.ForeColor = System.Drawing.Color.Black;
-            this.clearBtn.Location = new System.Drawing.Point(13, 442);
+            this.clearBtn.Location = new System.Drawing.Point(163, 426);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(183, 53);
+            this.clearBtn.Size = new System.Drawing.Size(141, 53);
             this.clearBtn.TabIndex = 6;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
@@ -287,7 +272,9 @@
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.ListBox);
             this.Controls.Add(this.groupBoxAnket);
+            this.MaximumSize = new System.Drawing.Size(869, 573);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.groupBoxAnket.ResumeLayout(false);
             this.groupBoxAnket.PerformLayout();
@@ -318,7 +305,6 @@
         private System.Windows.Forms.TextBox surnameTxtb;
         private System.Windows.Forms.TextBox emailTxtb;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
